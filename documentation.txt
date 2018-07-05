@@ -1,0 +1,54 @@
+Commands Used:
+#Attempt 1
+pip install -U spacy
+python -m spacy validate
+sudo pip install virtualenv
+curl -O https://pypi.python.org/packages/source/v/virtualenv/virtualenv-X.X.tar.gz
+tar xvfz virtualenv-X.X.tar.gz
+
+virtualenv my_project
+source my_project/bin/activate
+
+pip install requests
+git clone https://github.com/explosion/spaCy
+cd spacy
+export PYTHONPATH=`pwd`
+pip install -r requirements.txt
+
+python setup.py build_ext --inplace
+python -m spacy package /home/me/data/en_example_model /home/me/my_models
+python setup.py sdist
+pip install /path/to/en_example_model-1.0.0.tar.gz
+pip install spacy && python -m spacy download en
+
+#/Users/yuchangou/Git/chatbot/my_project/lib/python2.7/site-packages/en_core_web_sm
+#(shortcut) = /Users/yuchangou/Git/chatbot/spacy/spacy/data/en
+#You can now load the model via spacy.load('en')
+
+#commandline
+python -m spacy download en
+
+python -c "import os; import spacy; print(os.path.dirname(spacy.__file__))"
+
+deactivate
+
+################################################################################
+#Attempt 2
+python -m pip install -U virtualenv
+virtualenv .env
+source .env/bin/activate
+pip install -U spacy
+python -m spacy download en
+pip install spacy
+
+python -m spacy download en_core_web_md
+python -m spacy link en_core_web_md en
+
+################################################################################
+#Attempt 3
+#https://github.com/explosion/spaCy/issues/916
+pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-1.2.0/en_core_web_sm-1.2.0.tar.gz
+import spacy
+import en_core_web_sm
+nlp = en_core_web_sm.load()
+python -m spacy download en
